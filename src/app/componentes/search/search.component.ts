@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpfService } from 'src/app/services/spf.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  artistas:any []= [];
+  constructor(private spf:SpfService) { }
 
   ngOnInit() {
+  }
+
+  Buscar(buscar:string)
+  {
+
+    console.log(buscar);
+    this.spf.getartista(buscar).subscribe((data:any) =>
+      {
+        this.artistas= data;
+      console.log(data);
+    });
+
   }
 
 }

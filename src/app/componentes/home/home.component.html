@@ -1,10 +1,8 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card" *ngFor="let item of nc">
-      <img [src]="images[0].url" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
+<div class="card-columns">
+  <div class="card" *ngFor="let item of nc">
+    <img [src]="item.images[0].url" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name}}</h5>
+      <p class="card-text" *ngFor="let item2 of item.artists" ><span class="badge badge-pill badge-dark">{{item2.name}}</span></p>
     </div>
   </div>

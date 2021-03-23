@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
 
 
     this.spoty.getnewrelase().subscribe( (data:any) => {
-      console.log(data.albums.items);
-      this.nc = data.albums.items;
+      console.log(data);
+      this.nc = data;
     });
   //  this.http.get('https://restcountries.eu/rest/v2/lang/es').subscribe((data:any) => {
 
